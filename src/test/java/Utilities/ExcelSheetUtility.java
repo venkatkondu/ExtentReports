@@ -322,11 +322,61 @@ Done-	7.2 - get the Table type of data by using List<List<String>>  -- public Li
 		System.out.println("-----------------------------------------------------");
 		table.stream().forEach(list -> System.out.println(list)); // which one is working fine I will check 
 		System.out.println("-----------------------------------------------------");
-
-		
+	
 		return table;
 		
 	}
+	
+/*
+	8 - set the List<String> data into Row wise ---public void setRowDataListInRow(String sheetName,List<String> listRow , int rowNumber);
+	8.2 set the String[] data into row wise --public void setRowDataStringInRow(String sheetName,String cData[],int rowNum);
+	
+	9 - Set the List<String> data into column wise --public void setRowDataInColumn(String sheetName,List<Strign> listCol, String columnName);
+	9.2 -SEt the String[] data into column wise --public void setRowDataStringInColumn(String sheetName,String rData[],String olumnName)
+	
+	10 - Get the  Cell data in String format -- public String getTheCellData(String sheetName, int rowNum,String columnName)
+*/
+	
+	public void setRowDataList()
+	{
+		
+	}
+	public void setRowDataString()
+	{
+		
+	}
+	public void setCellData(String sheetName,String columnName,int rowNum,String cellData)
+	{
+		
+		// How to do this scenario implemented 
+		
+		
+		
+	}
+	
+	public void setRowDataList_BYColumnNameWise()
+	{
+		
+	}
+	
+	public void setRowDataString_BYColumnNameWise()
+	{
+		
+	}
+	
+	public void inserDataInRowString()
+	{
+		
+	}
+	public void insertDataInRowList()
+	{
+		
+	}
+	public void insertDataInCellString()
+	{
+		
+	}
+	
 
 	
 	public static void main(String[] args) {

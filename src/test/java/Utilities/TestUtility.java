@@ -46,7 +46,7 @@ import org.testng.Assert;
  7 - selectByValue(Select,String value)  -Done
  7 - selectByVisibleText(Select,String  -Done
  7 - selectByType(Select,SelectType,String value);-- Not done 
- 
+ 7 - for selectType for I will use DropDown.type from that enum class I will get the string type value
  6 - 
  6 - 
  6 - 
@@ -81,6 +81,10 @@ public class TestUtility {
 	public static int implicitTime=10;
 	public static String screenshotPath="./screenshots"; // (check user.dir) // by these where I have to store
 	public static String loggerFileLocation="./loggerInformationFile";
+	public static String chromeDriver="/home/venkat/Softwares/Browsers/chromedriver";
+	public static String geckoDriver="/home/venkat/Softwares/Browsers/geckodriver"; 
+	
+	
 	
 	public TestUtility()// in here I need to load properties file And access statically 
 	{
@@ -88,7 +92,7 @@ public class TestUtility {
 	}
 	//  ------------  for Browser  initiation ---------------
 // check this method is working or not as per my expectations 
-	public static WebDriver init(String browser)
+	public static WebDriver init(String browser)// this method return WebDriver Instance 
 	{// for this method what is the time_complexity and space_complexity
 		WebDriver driver=null;
 		if(browser.equalsIgnoreCase("chrome"))
@@ -244,7 +248,7 @@ System.out.println("Element screenshot is not taken in at Utility.pullElementScr
 	 // for below method I will use enum class for type of the String 
 	 // How to make that things by interface How to do that I will try later on 
 	 public static void selectByType(WebElement ele,String type, String value)
-	 {
+	 {// here what is the Time_Complexity and Space_Complextiy How to caluclate it 
 		 Select select=new Select(ele); // drop down handle by on the element 
 		 boolean bool=false;
 		 
