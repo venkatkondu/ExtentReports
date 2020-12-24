@@ -3,11 +3,21 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="ExtentReports.ExtentReportsTest">
+      <class name="myPagesTest.TestPage">
         <methods>
-          <include name="reportTest"/>
+          <include name="test011"/>
+          <include name="beforeSuite"/>
+          <include name="afterSuite"/>
+          <include name="afterTest"/>
+          <include name="afterMethod"/>
+          <include name="afterClass"/>
+          <include name="beforeTest"/>
+          <include name="test010"/>
+          <include name="beforeClass"/>
+          <include name="test009"/>
+          <include name="beforeMethod"/>
         </methods>
-      </class> <!-- ExtentReports.ExtentReportsTest -->
+      </class> <!-- myPagesTest.TestPage -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

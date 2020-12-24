@@ -2,12 +2,13 @@ package myPagesTest;
 
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterGroups;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeGroups;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Listeners;
 
 //@Listeners(MyTestListenersApp.class) // this will recognize the predefined methods automatically 
 public class BaseTest {
@@ -19,6 +20,11 @@ public class BaseTest {
 	
 	// How to configure that Extent reports Things 
 	
+	
+	protected BaseTest() // by this protected access modifiers we can access this class variables only its subclass only 
+	{
+		// I will check about this thing where we will use 
+	}
 	
 	@BeforeSuite
 	public void beforeSuite()
@@ -44,6 +50,8 @@ public class BaseTest {
 	public void beforeClass()
 	{
 		System.out.println("\t----- @BeforeClass ------");
+	
+
 	}
 	@AfterClass
 	public void afterClass()
@@ -56,6 +64,16 @@ public class BaseTest {
 	 * @Test public void test000() { * }
 	 */	
 	
+@BeforeGroups // when I will use this methods 
+public void beforeGroups()
+{
+	System.out.println("\t --------- @Before Groups -------------------- ");
+}
+@AfterGroups
+public void afterGroups()
+{
+	System.out.println("\t ----------- @AfterGroups ----------------------");
+}
 
 	
 }

@@ -35,7 +35,7 @@ import org.testng.Assert;
  
  3 - getDate()  -Done
  4 - getTimeDate()  -Done
- 5 - init(BrowerName) I have to pass   -Done
+ 5 - init_Driiver(BrowerName) I have to pass   -Done
  
  6 - pullElementScreenshotPath(element,String)   -Done // by using CustomListenerAdapterClass we have one problem I am 
  6 - pullScreenshotPath(driver,string,stirng)  -Done    // unable to pass the element and driver reference 
@@ -92,6 +92,8 @@ public class TestUtility {
 	}
 	//  ------------  for Browser  initiation ---------------
 // check this method is working or not as per my expectations 
+	
+	
 	public static WebDriver init(String browser)// this method return WebDriver Instance 
 	{// for this method what is the time_complexity and space_complexity
 		WebDriver driver=null;

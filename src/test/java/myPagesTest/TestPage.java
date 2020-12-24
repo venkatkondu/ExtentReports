@@ -1,13 +1,17 @@
 package myPagesTest;
 
 import org.testng.annotations.Test;
+
+import Utilities.DriverFactory;
+
 import org.testng.AssertJUnit;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-public class TestPage extends BaseTest {
+public final  class TestPage extends BaseTest { // because this class is last I don't want to create 
+				// sub classes for this class that's why I assigned this is final class
 	
 	
 
@@ -15,6 +19,15 @@ public class TestPage extends BaseTest {
 	public void beforeMethod()
 	{
 		System.out.println("\t----- @BeforeMethod ------");
+		
+		
+		// Here I want to load the Browser 
+		
+		
+		// Howt to do this 
+		driver=DriverFactory.init_Driver("chrome");
+		System.out.println(driver.getTitle());
+		
 	}
 	
 
@@ -103,6 +116,7 @@ public class TestPage extends BaseTest {
 	public void afterMethod()
 	{
 		System.out.println("\t----- @AfterMethod ------");
+		driver.close(); // 
 	}
 	
 	
