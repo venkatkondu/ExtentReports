@@ -5,6 +5,7 @@
 <suite name="Suite">
 
 <listeners>
+	<listener class-name="listeners.MyAnnotationTransformer"/><!--  working fine as per my expectation -->
 	<listener class-name="Utilities.ExtentReporting"/>
 </listeners>
   <test thread-count="5" name="Test">
