@@ -129,7 +129,8 @@ Done-	7.2 - get the Table type of data by using List<List<String>>  -- public Li
 	}
 	
 	public void removeSheet(String sheetName)
-	{//Remove the sheet in the workBook
+	{//Remove the sheet in the workBook // working fine as per my expectations
+		
 		FileOutputStream fos=null;
 		try {
 			fos=new FileOutputStream(this.file);System.out.println("Excel file is loaded for writing the data operation ");
@@ -176,6 +177,38 @@ Done-	7.2 - get the Table type of data by using List<List<String>>  -- public Li
 		
 		
 	}
+	public String getCellData(String sheetName , int rowNum, String columnName)
+	{ // Yes working fine as per my expectations 
+		String celData=null;
+		// How to do this 
+		
+		sheet=wBook.getSheet(sheetName);
+	
+		int cellnum=0; // I want to get the cell num on basis of the columnName How to do this I will try
+		row=sheet.getRow(0);
+		
+		for(int i=0;i<row.getLastCellNum();i++)
+		{
+		cell=row.getCell(i);
+		String celText=cell.getStringCellValue().toString();
+		if(celText.equalsIgnoreCase(columnName))
+		{
+			cellnum=i;
+		}
+		}
+		
+		row=sheet.getRow(rowNum);// this must be contains the row 
+				
+		cell=row.getCell(cellnum);
+		
+		return celData=cell.getStringCellValue().toString(); // I will check this weather I'm get or not 
+		
+		
+		
+	}
+	
+	
+	
 /*	
 	public String getCellData(String sheetName,String coloumnName,int rowNum)  
 	{// by using this method we get the String of the data of a particular column and and particular row
@@ -395,7 +428,12 @@ Done-	7.2 - get the Table type of data by using List<List<String>>  -- public Li
 		
 	
 //		Below are working fine but I'm not able to get the last of Row Values from the both String type  
-	for(int k=0;k<excel.getLastRowNumber(sName);k++)
+
+		/*
+		 * 
+		 * 
+		 
+		for(int k=0;k<excel.getLastRowNumber(sName);k++)
 	{
 		String rowData[]=excel.getRowData(sName, k);	
 	System.out.println("\n----------------------------------Get the data in String[] Row Type data -----------------------------------");
@@ -434,6 +472,17 @@ Done-	7.2 - get the Table type of data by using List<List<String>>  -- public Li
 			
 		excel.getTableList(sName, 1);//from second row onwards I will get the data in the form of List
 			excel.excelFileClose();// this execute smoothly  close the file 
+	
+	*/
+		for(int i=0;i<=excel.getLastRowNumber("Sheet1");i++)
+		{
+			System.out.println(excel.getCellData("Sheet1",i, "url"));
+
+		}
+		//System.out.println(excel.getCellData("Sheet1",1, "url"));
+	
+		excel.excelFileClose();// this execute smoothly  close the file 
+		
 	}
 
 }
